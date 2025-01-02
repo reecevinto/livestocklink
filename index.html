@@ -8,7 +8,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('livestock.JPG'); /* Replace 'background.jpg' with your image path */
+      background-image: url('livestock.JPG');
       background-size: cover;
       background-position: center;
       color: #333;
@@ -99,6 +99,11 @@
     ul li {
       margin: 0.5rem 0;
     }
+
+    .alert {
+      color: red;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -121,6 +126,8 @@
 
     <section id="dashboard">
       <h2>Your Livestock Dashboard</h2>
+      <p>Real-time health status and productivity tracking.</p>
+      <p class="alert">Upcoming Gestation Alert: Daisy (2024-01-01 to 2024-03-15)</p>
       <a href="#add-livestock" class="btn">Add New Livestock</a>
 
       <table>
@@ -130,6 +137,7 @@
             <th>Tag ID</th>
             <th>Breed</th>
             <th>Gestation Period</th>
+            <th>Health Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -139,6 +147,7 @@
             <td>12345</td>
             <td>Saanen</td>
             <td>2024-01-01 to 2024-03-15</td>
+            <td>Healthy</td>
             <td>
               <a href="#view" class="btn">View</a>
               <a href="#edit" class="btn">Edit</a>
@@ -153,10 +162,10 @@
       <h2>Add New Livestock</h2>
       <form>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" required><br><br>
 
         <label for="tag-id">Tag ID:</label>
-        <input type="text" id="tag-id" name="tag-id"><br><br>
+        <input type="text" id="tag-id" name="tag-id" required><br><br>
 
         <label for="breed">Breed:</label>
         <input type="text" id="breed" name="breed"><br><br>
@@ -166,6 +175,9 @@
 
         <label for="gestation-end">Gestation End:</label>
         <input type="date" id="gestation-end" name="gestation-end"><br><br>
+
+        <label for="health-status">Health Status:</label>
+        <input type="text" id="health-status" name="health-status"><br><br>
 
         <button type="submit" class="btn">Save</button>
       </form>
